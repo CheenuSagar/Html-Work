@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Inquiry Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#eef3f7;
+      --panel:#ffffff;
+      --line:#d7dee6;
+      --text:#1f2a37;
+      --muted:#6b7280;
+      --accent:#1f7ae0;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Apple Color Emoji,Segoe UI Emoji;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:48px auto;
+      padding:0 16px;
+    }
+
+    .panel{
+      background:linear-gradient(#f6f9fc,#eef2f6);
+      border:1px solid var(--line);
+      border-radius:10px;
+      box-shadow:0 2px 8px rgba(16,24,40,.06);
+      padding:28px 22px;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:26px;
+      font-weight:600;
+      letter-spacing:.2px;
+    }
+
+    /* two-column grid: labels left, fields right */
+    form{
+      display:grid;
+      grid-template-columns: 220px minmax(240px, 1fr);
+      gap:14px 16px;
+      align-items:center;
+    }
+
+    label{
+      justify-self:end;
+      color:#111827;
+      font-weight:600;
+      font-size:14px;
+      padding-right:6px;
+      text-align:right;
+    }
+
+    .field{
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+    .field i{
+      position:absolute;
+      left:10px; 
+      font-size:14px;
+      color:#6b7280;
+      pointer-events:none;
+    }
+    .input, select, textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background:#fff;
+      outline:none;
+      padding:10px 12px 10px 34px; /* leave space for icon */
+      border-radius:4px;
+      font-size:14px;
+      color:var(--text);
+    }
+    .input:focus, select:focus, textarea:focus{
+      border-color:var(--accent);
+      box-shadow:0 0 0 3px rgba(31,122,224,.12);
+    }
+    select{
+      appearance:none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #6b7280 50%),
+        linear-gradient(135deg, #6b7280 50%, transparent 50%);
+      background-position:
+        calc(100% - 16px) calc(50% - 2px),
+        calc(100% - 11px) calc(50% - 2px);
+      background-size:6px 6px, 6px 6px;
+      background-repeat:no-repeat;
+      padding-right:36px; /* space for arrow */
+    }
+    textarea{
+      min-height:90px;
+      resize:vertical;
+      padding-left:34px;
+    }
+
+    /* radio row */
+    .radio-row{
+      display:flex;
+      gap:22px;
+      align-items:center;
+      padding:8px 0;
+      border:1px solid var(--line);
+      border-radius:4px;
+      background:#fff;
+      padding-left:34px;
+      position:relative;
+    }
+    .radio-row i{ left:10px; }
+    .radio-row label{
+      justify-self:start;
+      font-weight:500;
+      color:var(--text);
+      text-align:left;
+      padding:0;
+    }
+    .radio-row input[type="radio"]{
+      margin-right:6px;
+      transform:translateY(1px);
+    }
+
+    /* button row spans both columns */
+    .actions{
+      grid-column:1 / -1;
+      display:flex;
+      justify-content:center;
+      margin-top:6px;
+    }
+    button{
+      border:0;
+      background:linear-gradient(#f7a75e,#e78728);
+      color:#fff;
+      font-weight:700;
+      letter-spacing:.2px;
+      padding:10px 22px;
+      border-radius:8px;
+      cursor:pointer;
+      box-shadow:0 1px 0 rgba(0,0,0,.15), inset 0 1px 0 rgba(255,255,255,.2);
+    }
+    button:active{ transform:translateY(1px); }
+
+    /* responsive: stack labels on small screens */
+    @media (max-width:720px){
+      form{ grid-template-columns:1fr; }
+      label{ justify-self:start; text-align:left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <h1>Tell Us About Your Project</h1>
+
+      <form action="#" method="post" novalidate>
+        <label for="first">First Name</label>
+        <div class="field">
+          <i class="fa-solid fa-user"></i>
+          <input id="first" name="first" class="input" type="text" placeholder="First Name" required>
+        </div>
+
+        <label for="last">Last Name</label>
+        <div class="field">
+          <i class="fa-regular fa-user"></i>
+          <input id="last" name="last" class="input" type="text" placeholder="Last Name" required>
+        </div>
+
+        <label for="email">E-Mail</label>
+        <div class="field">
+          <i class="fa-regular fa-envelope"></i>
+          <input id="email" name="email" class="input" type="email" placeholder="E-Mail Address" required>
+        </div>
+
+        <label for="phone">Phone #</label>
+        <div class="field">
+          <i class="fa-solid fa-phone"></i>
+          <input id="phone" name="phone" class="input" type="tel" placeholder="(845)555-1212" pattern="^\(?\d{3}\)?\s?\d{3}-?\d{4}$">
+        </div>
+
+        <label for="address">Address</label>
+        <div class="field">
+          <i class="fa-solid fa-house"></i>
+          <input id="address" name="address" class="input" type="text" placeholder="Address">
+        </div>
+
+        <label for="city">City</label>
+        <div class="field">
+          <i class="fa-regular fa-building"></i>
+          <input id="city" name="city" class="input" type="text" placeholder="City">
+        </div>
+
+        <label for="state">State</label>
+        <div class="field">
+          <i class="fa-solid fa-list"></i>
+          <select id="state" name="state">
+            <option value="" selected>Please select your state</option>
+            <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+            <option>Bihar</option><option>Chhattisgarh</option><option>Delhi</option>
+            <option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+            <option>Jammu & Kashmir</option><option>Jharkhand</option><option>Karnataka</option>
+            <option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option>
+            <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+            <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+            <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+            <option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option>
+            <option>Uttarakhand</option><option>West Bengal</option>
+          </select>
+        </div>
+
+        <label for="zip">Zip Code</label>
+        <div class="field">
+          <i class="fa-solid fa-location-dot"></i>
+          <input id="zip" name="zip" class="input" type="text" placeholder="Zip Code" pattern="^\d{4,10}$">
+        </div>
+
+        <label for="domain">Website or domain name</label>
+        <div class="field">
+          <i class="fa-regular fa-circle"></i>
+          <input id="domain" name="domain" class="input" type="text" placeholder="Website or domain name">
+        </div>
+
+        <label>Do you have hosting?</label>
+        <div class="radio-row">
+          <i class="fa-solid fa-server"></i>
+          <label><input type="radio" name="hosting" value="yes">Yes</label>
+          <label><input type="radio" name="hosting" value="no">No</label>
+        </div>
+
+        <label for="desc">Project Description</label>
+        <div class="field">
+          <i class="fa-regular fa-pen-to-square"></i>
+          <textarea id="desc" name="desc" placeholder="Project Description"></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit"><i class="fa-regular fa-paper-plane"></i> &nbsp;Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Optional: basic client-side helper to prevent form submit during demo -->
+  <script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Form submitted (demo). Replace action="#" to post it.');
+    });
+  </script>
+</body>
+</html>

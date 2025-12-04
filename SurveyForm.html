@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+</head>
+<body>
+    <h2>Survey Form</h2>
+
+    <form action="#" method="post">
+
+        <!-- Name -->
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        <!-- Email -->
+        <label for="email">Email ID:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+        <!-- Age -->
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="10" max="100" required><br><br>
+
+        <!-- Gender -->
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female" required> Female
+        <input type="radio" name="gender" value="Other" required> Other<br><br>
+
+        <!-- Satisfaction -->
+        <label>How satisfied are you with our service?</label><br>
+        <select name="satisfaction" required>
+            <option value="">Select an option</option>
+            <option value="Very Satisfied">Very Satisfied</option>
+            <option value="Satisfied">Satisfied</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Unsatisfied">Unsatisfied</option>
+            <option value="Very Unsatisfied">Very Unsatisfied</option>
+        </select><br><br>
+
+        <!-- Multiple choice -->
+        <label>Which of these features do you use? (Choose all that apply)</label><br>
+        <input type="checkbox" name="features" value="Website"> Website<br>
+        <input type="checkbox" name="features" value="Mobile App"> Mobile App<br>
+        <input type="checkbox" name="features" value="Customer Support"> Customer Support<br>
+        <input type="checkbox" name="features" value="Offers"> Offers<br><br>
+
+        <!-- Comments -->
+        <label for="comments">Any suggestions or comments?</label><br>
+        <textarea id="comments" name="comments" rows="5" placeholder="Write here..."></textarea><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Survey</button>
+
+    </form>
+
+</body>
+</html>
