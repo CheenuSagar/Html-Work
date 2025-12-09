@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Layout</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial bold, sans-serif;
+    }
+       *{
+            padding: 0;
+            margin: 0;
+        }
+        .grid1 {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: 1fr 1fr;
+        }
+        .grid2 {
+            display: grid;
+            gap: 5px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+        .logo{
+            width: 40px;
+            height: 20px;
+            background-color:black;
+            color: aliceblue;
+        }
+
+
+
+    .container {
+        display: grid;
+        grid-template-rows: 70px auto auto 60px;
+        grid-template-columns: 250px auto;
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "gallery gallery"
+            "footer footer";
+    }
+
+    header {
+        grid-area: header;
+        background: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .contact-form {
+        margin-top: 20px;
+    }
+
+    .contact-form input, 
+
+    .contact-form textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+
+
+    footer {
+        grid-area: footer;
+        background: #222;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h2>Logo</h2>
+        <div class="menu-btns">
+            <button>H</button>
+            <button>S</button>
+            <button>G</button>
+            <button>C</button>
+        </div>
+    </header>
+    
+         <ul>
+            <div>Home</div><br>
+            <div>Services</div><br>
+            <div>Gallery</div><br>
+            <div>Contact</div><br>
+        </ul>
+
+    <main>
+        <h2>Heading</h2>
+        <p>This is the main content area.</p>
+        <div class="contact-form">
+            <h3>Contact Us</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+                <br></br>
+                 
+            </form>
+    </main>
+    </section>
+
+    <footer>
+        <p>Footer Section</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
