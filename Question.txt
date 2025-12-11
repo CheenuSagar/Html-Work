@@ -23,3 +23,15 @@ Example:
 <audio controls>
   <source src="music.mp3" type="audio/mp3">
 </audio>
+
+
+2. Hyperlinks
+
+Hyperlinks improve usability by allowing users to navigate between pages or sections easily.
+
+Example:
+
+<a href="https://abes.ac.in">Visit Example</a>
+<a href="#section2">Go to Section 2</a>
+
+
