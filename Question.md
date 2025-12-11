@@ -9,6 +9,7 @@ A well‑designed webpage uses various HTML elements to make content more intera
  Tables organize structured data clearly, helping users compare information. Forms collect user input efficiently
   for tasks like sign‑up or feedback. Lists present information in readable points, improving clarity and scanning.
 
+---
 
   1. Multimedia Elements
 
@@ -24,7 +25,7 @@ Example:
   <source src="music.mp3" type="audio/mp3">
 </audio>
 
-
+---
 2. Hyperlinks
 
 Hyperlinks improve usability by allowing users to navigate between pages or sections easily.
@@ -35,7 +36,7 @@ Example:
 <a href="#section2">Go to Section 2</a>
 
 
-
+---
 3. Tables
 
 Tables display structured data so users can read and compare information quickly.
@@ -54,7 +55,7 @@ Example:
 </table>
 
 
-
+---
 4. Forms
 
 Forms collect user data, improving interaction between the user and the website.
@@ -72,7 +73,7 @@ Example:
 </form>
 
 
-
+---
 5. Lists
 
 Lists help organize information in simple, readable points.
@@ -91,7 +92,7 @@ Example:
 </ol>
 
 
-
+---
 Conclusion
 
 By combining multimedia, hyperlinks, tables, forms, and lists effectively, a webpage becomes more interactive, 
